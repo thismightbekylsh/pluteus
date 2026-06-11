@@ -21,7 +21,7 @@ Esse é o cérebro do nosso robô, toda a programação que fazemos para control
 
 ![ARDUINO MEGA](https://majestronicz.in/cdn/shop/files/Arduino_MEGA_2560.jpg?v=1725085620")
 
-#### 1.1 POWER
+### 1.1 POWER
 
 - IOREF ( ***NÃO UTILIZAMOS*** ) 
 
@@ -49,19 +49,19 @@ O Arduino Mega possui 5 pinos GND espalhados pela placa, e todos eles estão con
 
 A porta (ou pino) VIN significa "Voltage In" (Entrada de Tensão). Ela é uma das portas mais versáteis do Arduino Mega 2560, pois serve tanto como uma entrada para alimentar a placa quanto como uma saída de energia bruta.
 
-#### 1.2 ANALOG IN
+### 1.2 ANALOG IN
 
 As portas do intervalo A0 até A15 (Totalizando 16 pinos) são chamadas de analógicas. Diferente das portas digitais que trabalham com valores de HIGH ou LOW (ligado e desligado), essas portas podem enviar e receber valores variáveis de energia. 0-256 ou 0-1024 em alguns casos.
 
-#### 1.3 DIGITAL 
+### 1.3 DIGITAL 
 
 As portas DIGITAL (0 a 53) do Arduino Mega 2560 são pinos bidirecionais projetados para enviar ou receber sinais elétricos discretos, operando exclusivamente em dois estados lógicos: ALTO (5V, ligado) ou BAIXO (0V/GND, desligado).
 
-#### 1.4 PWM
+### 1.4 PWM
 
 A sigla PWM significa Pulse Width Modulation (Modulação por Largura de Pulso). Em placas de desenvolvimento (como o Arduino), as portas PWM são pinos digitais especiais que conseguem simular um sinal analógico.
 
-#### 1.5 COMMUNICATION
+### 1.5 COMMUNICATION
 
 As portas de Communication (Comunicação) do Arduino Mega 2560 são pinos dedicados à troca de dados entre a placa e outros dispositivos, como computadores, sensores complexos, telas ou outros microcontroladores.
 
