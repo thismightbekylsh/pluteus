@@ -19,6 +19,12 @@ Esse material vai ajudá-los a entender os componentes utilizados no hardware, a
         - [3.1 POWER](#31-power)
         - [3.2 ECHO](#32-echo)
         - [3.3 TRIG](#33-trig)
+    - [4. Pontes H](#4-pontes-h)
+        - [4.1 POWER](#41-power)
+        - [4.2 Saídas A e B](#42-saídas-a-e-b)
+        - [4.3 Habilita A e B](#43-habilita-a-e-b)
+        - [4.4 Entrada](#44-entrada)
+        - [4.5 Habilita 5V](#45-habilita-5v)
 - [Software](#software)
 - [A Competição](#3-a-competição)
 
@@ -130,3 +136,36 @@ O pino Echo do sensor ultrassônico (como o HC-SR04) serve para receber o retorn
 
 ### 3.3 TRIG
 O pino Trig serve para iniciar a medição de distância, comandando o sensor para que ele envie a onda sonora. Assim como o Echo, você pode conectar o Trig em qualquer porta digital comum do Arduino Mega (por exemplo, as portas 2, 3, 4, 5, etc.), exceto as portas 0 e 1.
+
+### 4. Pontes H
+
+A ponte H é o componente utilizado para comunicação com os motores. Cada ponte H pode ser ligada a 2 motores, sendo que nosso robô tem 2 para seus 4 motores.
+
+![Ponte H](https://institutodigital.com.br/wp-content/uploads/2026/06/driver-motor-ponte-h-l298n-2.jpg)
+
+### 4.1 POWER
+
+- +12V: Essa porta deve estar ligada ao VIN da placa de arduíno.
+- GND: Aqui é onde colocaremos nossa ligação com o terra da placa.
+- 5V: Essa entrada deve ser ligada a uma porta qualquer 5V do arduíno.
+
+### 4.2 Saídas A e B
+
+Essas portas são onde colocamos os fios dos motores, um em cada entrada.
+
+### 4.3 Habilita A e B
+
+São entradas conhecidas como ENA e ENB, elas regulam a velocidade dos motores de acordo com o valor enviado para elas. Devem estar em portas digitais PWM.
+
+### 4.4 Entrada
+
+Esses pinos são os controladores de direção dos motores. São encontradas no componente como IN em um intervalo de 1..4, sendo que cada par (1 e 2 / 3 e 4) controla um único motor. Elas devem estar em portas digitais comuns no arduíno.
+
+### 4.5 Habilita 5V
+
+O pino Habilita 5V serve para controlar o funcionamento do regulador de tensão interno da placa.
+
+- Motores até 12V: Deixe o jumper conectado. A Ponte-H gera os próprios 5V e pode até alimentar o seu Arduino.
+
+- Motores acima de 12V: Retire o jumper. Você terá que puxar 5V do Arduino para ligar na Ponte-H.
+
