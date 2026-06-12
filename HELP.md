@@ -15,6 +15,10 @@ Esse material vai ajudá-los a entender os componentes utilizados no hardware, a
         - [2.2 Sensores Infravermelho](#22-sensores-infravermelho)
         - [2.3 Sensores LDR](#23-sensores-ldr)
         - [2.4 LEDs](#24-leds)
+    - [3. Sensores ultrassônicos](#3-sensores-ultrassônicos)
+        - [3.1 POWER](#31-power)
+        - [3.2 ECHO](#32-echo)
+        - [3.3 TRIG](#33-trig)
 - [Software](#software)
 - [A Competição](#3-a-competição)
 
@@ -111,3 +115,18 @@ Os sensores LDR são fotosensíveis, logo reagem à quantidade de luz absorvida 
 ### 2.4 LEDs
 
 Os LEDs serão a fonte de luz utilizada no percurso para distinguir as cores em situações específicas. Na placa temos dois leds RGBs que podem ser utilizados com as portas representadas por 2- Blue, 3- Green e 4- Red em verde e azul no diagrama.
+
+### 3. Sensores ultrassônicos
+
+Os sensores ultrassônicos serão utilizados para receber dados de distância de objetos no percurso da competição. Eles utilizam ondas para determinar se há algum objeto em certa direção e a sua distância até ele.
+
+![Sensor ultrassônico](https://www.makerhero.com/wp-content/uploads/2017/07/Sensor-de-Distancia-Ultrassonico-HC-SR04-9SS01-foto-prod-3.png)
+
+### 3.1 POWER
+A alimentação desse sensor é feita pelos pinos VCC colocado em uma porta 5V no arduíno e um GND colocado em um GND no arduíno. 
+
+### 3.2 ECHO
+O pino Echo do sensor ultrassônico (como o HC-SR04) serve para receber o retorno da onda sonora. Você pode conectar o pino Echo em qualquer porta digital comum do Arduino Mega 2560 ou Uno (por exemplo, as portas 2, 3, 4, 5, etc.).
+
+### 3.3 TRIG
+O pino Trig serve para iniciar a medição de distância, comandando o sensor para que ele envie a onda sonora. Assim como o Echo, você pode conectar o Trig em qualquer porta digital comum do Arduino Mega (por exemplo, as portas 2, 3, 4, 5, etc.), exceto as portas 0 e 1.
