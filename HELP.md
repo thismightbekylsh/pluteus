@@ -25,6 +25,7 @@ Esse material vai ajudá-los a entender os componentes utilizados no hardware, a
         - [4.3 Habilita A e B](#43-habilita-a-e-b)
         - [4.4 Entrada](#44-entrada)
         - [4.5 Habilita 5V](#45-habilita-5v)
+    - [5. Jumpers](#5-jumpers)
 - [Software](#software)
 - [A Competição](#3-a-competição)
 
@@ -169,3 +170,8 @@ O pino Habilita 5V serve para controlar o funcionamento do regulador de tensão 
 
 - Motores acima de 12V: Retire o jumper. Você terá que puxar 5V do Arduino para ligar na Ponte-H.
 
+### 5. Jumpers
+
+Os jumpers são os fios que usamos para conectar todos os componentes ao arduíno. Existem 3 tipos deles. Macho-macho, macho-fêmea e fêmea-fêmea. Macho são extremidades com pinos e fêmeas com entradas.
+
+<img src = "https://proesi.cdn.magazord.com.br/img/2024/01/produto/7220/kit-jumpers-macho-x-femea-x-10-unidades-11cm-2.jpeg?ims=fit-in/600x600/filters:fill(white)" width = "40%">
