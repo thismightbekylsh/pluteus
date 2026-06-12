@@ -10,6 +10,11 @@ Esse material vai ajudá-los a entender os componentes utilizados no hardware, a
         - [1.3 DIGITAL](#13-digital)
         - [1.4 PWM](#14-pwm)
         - [1.5 COMMUNICATION](#15-communication)
+    - [2. Placa de sensores](#2-placa-de-sensores)
+        - [2.1 POWER](#21-power)
+        - [2.2 Sensores Infravermelho](#22-sensores-infravermelho)
+        - [2.3 Sensores LDR](#23-sensores-ldr)
+        - [2.4 LEDs](#24-leds)
 - [Software](#software)
 - [A Competição](#3-a-competição)
 
@@ -83,3 +88,26 @@ Utiliza dois pinos para cada porta: um para transmitir dados (TX) e outro para r
     - **SCK (Serial Clock)**: Linha que sincroniza o tempo de envio dos dados.
     - **SS (Slave Select)**: Pino usado para ativar o periférico específico com o qual o Arduino quer falar. Cada novo dispositivo SPI precisa de um pino SS exclusivo.
 
+### 2. Placa de sensores
+
+Essa é a placa desenvolvida no passado por outros colegas que participaram da Olimpíada de Robótica. Atualmente nos utilizamos ela para atender os requisitos de leitura do percurso.
+
+![Placa de sensores](src/Placa_de_sensores.jpg)
+
+### 2.1 POWER
+
+A alimentação da placa é feita com uma entrada 5V (1- 5V em vermelho) e um GND (2- GND em vermelho). Ligando ela corretamente no arduíno ela estará ligada.
+
+> ⚠️ Cuidado para não queimar a placa ligando outro pino em alimentação!!!
+
+### 2.2 Sensores infravermelho
+
+Os sensores infrarmevelho estão representandos em vermelho no esquema como IR1..4. Eles devem ser atribuídos a portas analógicas e retornarão valores diferentes a partir da refração do material exposto a eles.
+
+### 2.3 Sensores LDR
+
+Os sensores LDR são fotosensíveis, logo reagem à quantidade de luz absorvida em seus circuitos. Nessa placa nós utilizamos eles para detectar a luz refletida pelos LEDs.
+
+### 2.4 LEDs
+
+Os LEDs serão a fonte de luz utilizada no percurso para distinguir as cores em situações específicas. Na placa temos dois leds RGBs que podem ser utilizados com as portas representadas por 2- Blue, 3- Green e 4- Red em verde e azul no diagrama.
