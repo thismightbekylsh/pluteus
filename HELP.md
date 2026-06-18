@@ -103,7 +103,7 @@ Utiliza dois pinos para cada porta: um para transmitir dados (TX) e outro para r
 
 Essa é a placa desenvolvida no passado por outros colegas que participaram da Olimpíada de Robótica. Atualmente nos utilizamos ela para atender os requisitos de leitura do percurso.
 
-![Placa de sensores](src/Placa_de_sensores.jpg)
+![Placa de sensores](assets/images/Placa_de_sensores.jpg)
 
 ### 2.1 POWER
 
