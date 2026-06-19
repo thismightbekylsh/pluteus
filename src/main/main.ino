@@ -1,4 +1,5 @@
 #include "Motor.h"
+#include "Sensorplate.h"
 
 #define ENA_F 2
 #define ENB_F 3
@@ -15,10 +16,10 @@
 #define IN3_B 28
 #define IN4_B 29
 
-#define IR1 A0
-#define IR2 A1
-#define IR3 A2
-#define IR4 A3
+#define SIR1 A0
+#define SIR2 A1
+#define SIR3 A2
+#define SIR4 A3
  
  #define LDR1 A15
  #define LDR2 A14
@@ -58,8 +59,14 @@ void setup() {
 }
 
 void loop() {
-  
-  
+  Serial.print("Sensor 1: ");
+  Serial.print(IR1());
+  Serial.print(" | Sensor 2: ");
+  Serial.print(IR2());
+  Serial.print(" | Sensor 3: ");
+  Serial.print(IR3());
+  Serial.print(" | Sensor 4: ");
+  Serial.println(IR4());
 }
 
 

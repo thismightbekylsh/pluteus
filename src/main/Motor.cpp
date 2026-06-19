@@ -1,4 +1,20 @@
 #include "Motor.h"
+#include <Arduino.h>
+
+#define ENA_F 2
+#define ENB_F 3
+#define ENA_B 4
+#define ENB_B 5
+
+#define IN1_F 22
+#define IN2_F 23
+#define IN3_F 24
+#define IN4_F 25
+
+#define IN1_B 26
+#define IN2_B 27
+#define IN3_B 28
+#define IN4_B 29
 
 void Go(int speed)
 {
@@ -7,15 +23,15 @@ void Go(int speed)
   analogWrite(ENA_B, speed);
   analogWrite(ENB_B, speed);
 
-  digitalWrite(IN1_F, LOW);
-  digitalWrite(IN2_F, HIGH);
+  digitalWrite(IN1_F, HIGH);
+  digitalWrite(IN2_F, LOW);
   digitalWrite(IN3_F, LOW);
   digitalWrite(IN4_F, HIGH);
 
-  digitalWrite(IN1_B, HIGH);
-  digitalWrite(IN2_B, LOW);
-  digitalWrite(IN3_B, HIGH);
-  digitalWrite(IN4_B, LOW);
+  digitalWrite(IN1_B, LOW); // XX Xx
+  digitalWrite(IN2_B, HIGH); // XX Xx
+  digitalWrite(IN3_B, HIGH); // XX xX
+  digitalWrite(IN4_B, LOW); // XX xX
 }
 
 void Back(int speed)
@@ -45,8 +61,8 @@ void Right(int speed)
 
   digitalWrite(IN1_F, LOW);
   digitalWrite(IN2_F, HIGH);
-  digitalWrite(IN3_F, HIGH);
-  digitalWrite(IN4_F, LOW);
+  digitalWrite(IN3_F, LOW);
+  digitalWrite(IN4_F, HIGH);
 
   digitalWrite(IN1_B, HIGH);
   digitalWrite(IN2_B, LOW);
