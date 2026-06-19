@@ -59,14 +59,7 @@ void setup() {
 }
 
 void loop() {
-  Serial.print("Sensor 1: ");
-  Serial.print(IR1());
-  Serial.print(" | Sensor 2: ");
-  Serial.print(IR2());
-  Serial.print(" | Sensor 3: ");
-  Serial.print(IR3());
-  Serial.print(" | Sensor 4: ");
-  Serial.println(IR4());
+  Go(150, 150, 150, 150);
 }
 
 

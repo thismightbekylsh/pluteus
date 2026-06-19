@@ -16,12 +16,12 @@
 #define IN3_B 28
 #define IN4_B 29
 
-void Go(int speed)
+void Go(int sp1, int sp2, int sp3, int sp4)
 {
-  analogWrite(ENA_F, speed);
-  analogWrite(ENB_F, speed);
-  analogWrite(ENA_B, speed);
-  analogWrite(ENB_B, speed);
+  analogWrite(ENA_F, sp1);
+  analogWrite(ENB_F, sp2);
+  analogWrite(ENA_B, sp3);
+  analogWrite(ENB_B, sp4);
 
   digitalWrite(IN1_F, HIGH);
   digitalWrite(IN2_F, LOW);
@@ -34,12 +34,12 @@ void Go(int speed)
   digitalWrite(IN4_B, LOW); // XX xX
 }
 
-void Back(int speed)
+void Back(int sp1, int sp2, int sp3, int sp4)
 {
-  analogWrite(ENA_F, speed);
-  analogWrite(ENB_F, speed);
-  analogWrite(ENA_B, speed);
-  analogWrite(ENB_B, speed);
+  analogWrite(ENA_F, sp1);
+  analogWrite(ENB_F, sp2);
+  analogWrite(ENA_B, sp3);
+  analogWrite(ENB_B, sp4);
 
   digitalWrite(IN1_F, HIGH);
   digitalWrite(IN2_F, LOW);
@@ -52,12 +52,12 @@ void Back(int speed)
   digitalWrite(IN4_B, HIGH);
 }
 
-void Right(int speed)
+void Right(int sp1, int sp2, int sp3, int sp4)
 {
-  analogWrite(ENA_F, speed);
-  analogWrite(ENB_F, speed);
-  analogWrite(ENA_B, speed);
-  analogWrite(ENB_B, speed);
+  analogWrite(ENA_F, sp1);
+  analogWrite(ENB_F, sp2);
+  analogWrite(ENA_B, sp3);
+  analogWrite(ENB_B, sp4);
 
   digitalWrite(IN1_F, LOW);
   digitalWrite(IN2_F, HIGH);
@@ -70,12 +70,12 @@ void Right(int speed)
   digitalWrite(IN4_B, HIGH);
 }
 
-void Left(int speed)
+void Left(int sp1, int sp2, int sp3, int sp4)
 {
-  analogWrite(ENA_F, speed);
-  analogWrite(ENB_F, speed);
-  analogWrite(ENA_B, speed);
-  analogWrite(ENB_B, speed);
+  analogWrite(ENA_F, sp1);
+  analogWrite(ENB_F, sp2);
+  analogWrite(ENA_B, sp3);
+  analogWrite(ENB_B, sp4);
 
   digitalWrite(IN1_F, HIGH);
   digitalWrite(IN2_F, LOW);
