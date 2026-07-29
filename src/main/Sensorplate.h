@@ -1,11 +1,12 @@
 //sensorplate.h
 
-#ifndef SENSORPLATE.H
-#define SENSORPLATE.H
+#ifndef SENSORPLATE_H
+#define SENSORPLATE_H
 
-int IR1();
-int IR2();
-int IR3();
-int IR4();
+void SensorsCheck();
+void GreenL();
+void RedL();
+void BlueL();
+void NoLight();
 
 #endif

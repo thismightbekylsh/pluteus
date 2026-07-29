@@ -6,31 +6,71 @@
 #define SIR3 A2
 #define SIR4 A3
  
-#define LDR1 A15
-#define LDR2 A14
-#define LED_B1 52
-#define LED_B2 51
-#define LED_G1 53
-#define LED_G2 48
-#define LED_R1 50
-#define LED_R2 49
+#define LDR1 A4
+#define LDR2 A5
 
-int IR1()
+#define LED_R1 34
+#define LED_G2 37
+#define LED_B1 35
+#define LED_B2 38
+#define LED_G1 36
+#define LED_R2 39
+
+void SensorsCheck()
 {
-  return analogRead(SIR1);
+  Serial.print("IR1: | ");
+  Serial.print(analogRead(SIR1));
+  Serial.print(" | IR2: | ");
+  Serial.print(analogRead(SIR2));
+  Serial.print(" | IR3: | ");
+  Serial.print(analogRead(SIR3));
+  Serial.print(" | IR4: | ");
+  Serial.print(analogRead(SIR4));
+  Serial.print(" | LDR1: | ");
+  Serial.print(analogRead(LDR1));
+  Serial.print(" | LDR2: | ");
+  Serial.println(analogRead(LDR2));
 }
 
-int IR2()
+void GreenL()
 {
-  return analogRead(SIR2);
+  digitalWrite(LED_G1, LOW);
+  digitalWrite(LED_G2, LOW);
+
+  digitalWrite(LED_B1, HIGH);
+  digitalWrite(LED_B2, HIGH);
+  digitalWrite(LED_R1, HIGH);
+  digitalWrite(LED_R2, HIGH);
 }
 
-int IR3()
+void RedL()
 {
-  return analogRead(SIR3);
+  digitalWrite(LED_R1, LOW);
+  digitalWrite(LED_R2, LOW);
+
+  digitalWrite(LED_B1, HIGH);
+  digitalWrite(LED_B2, HIGH);
+  digitalWrite(LED_G1, HIGH);
+  digitalWrite(LED_G2, HIGH);
 }
 
-int IR4()
+void BlueL()
 {
-  return analogRead(SIR4);
+  digitalWrite(LED_B1, LOW);
+  digitalWrite(LED_B2, LOW);
+
+  digitalWrite(LED_G1, HIGH);
+  digitalWrite(LED_G2, HIGH);
+  digitalWrite(LED_R1, HIGH);
+  digitalWrite(LED_R2, HIGH);
+}
+
+void NoLight()
+{
+  digitalWrite(LED_B1, HIGH);
+  digitalWrite(LED_B2, HIGH);
+  digitalWrite(LED_G1, HIGH);
+  digitalWrite(LED_G2, HIGH);
+  digitalWrite(LED_R1, HIGH);
+  digitalWrite(LED_R2, HIGH);
 }

@@ -6,30 +6,30 @@
 #define ENA_B 4
 #define ENB_B 5
 
-#define IN1_F 22
-#define IN2_F 23
-#define IN3_F 24
-#define IN4_F 25
+#define IN1_B 22
+#define IN2_B 23
+#define IN3_B 24
+#define IN4_B 25
 
-#define IN1_B 26
-#define IN2_B 27
-#define IN3_B 28
-#define IN4_B 29
+#define IN1_F 26
+#define IN2_F 27
+#define IN3_F 28
+#define IN4_F 29
 
 #define SIR1 A0
 #define SIR2 A1
 #define SIR3 A2
 #define SIR4 A3
  
- #define LDR1 A15
- #define LDR2 A14
+#define LDR1 A4
+#define LDR2 A5
 
- #define LED_B1 52
- #define LED_B2 51
- #define LED_G1 53
- #define LED_G2 48
- #define LED_R1 50
- #define LED_R2 49
+#define LED_R1 34
+#define LED_G2 37
+#define LED_B1 35
+#define LED_B2 38
+#define LED_G1 36
+#define LED_R2 39
 
 void setup() {
   // put your setup code here, to run once:
@@ -59,8 +59,33 @@ void setup() {
 }
 
 void loop() {
-  Go(150, 150, 150, 150);
+
+  NoLight();
+
+  int SeIR1 = analogRead(SIR1);
+  int SeIR2 = analogRead(SIR2);
+  int SeIR3 = analogRead(SIR3);
+  int SeIR4 = analogRead(SIR4);
+
+  const int THRESHOLD = 700;
+
+  if(SeIR2 >= THRESHOLD)
+  {
+    Left(80,80,80,80);
+  }
+  else if (SeIR3 >= THRESHOLD)
+  {
+    Right(80,80,80,80);
+  }
+  else if (SeIR4 >= THRESHOLD)
+  {
+    Right(80,80,80,80);
+  }
+  else if (SeIR1 >= THRESHOLD)
+  {
+    Left(80,80,80,80);
+  }
+  else {
+    Go(80, 80, 80, 80); 
+  }
 }
-
-
-
