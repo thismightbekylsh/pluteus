@@ -16,7 +16,7 @@
 #define IN3_F 28
 #define IN4_F 29
 
-void Go(int sp1, int sp2, int sp3, int sp4)
+void Go(int sp3, int sp4, int sp2, int sp1)
 {
   analogWrite(ENA_F, sp1);
   analogWrite(ENB_F, sp2);
@@ -34,7 +34,7 @@ void Go(int sp1, int sp2, int sp3, int sp4)
   digitalWrite(IN4_B, HIGH); // XX xX
 }
 
-void Back(int sp1, int sp2, int sp3, int sp4)
+void Back(int sp3, int sp4, int sp2, int sp1)
 {
   analogWrite(ENA_F, sp1);
   analogWrite(ENB_F, sp2);
@@ -52,7 +52,7 @@ void Back(int sp1, int sp2, int sp3, int sp4)
   digitalWrite(IN4_B, LOW);
 }
 
-void Right(int sp1, int sp2, int sp3, int sp4)
+void Right(int sp3, int sp4, int sp2, int sp1)
 {
   analogWrite(ENA_F, sp1);
   analogWrite(ENB_F, sp2);
@@ -70,7 +70,7 @@ void Right(int sp1, int sp2, int sp3, int sp4)
   digitalWrite(IN4_B, HIGH);
 }
 
-void Left(int sp1, int sp2, int sp3, int sp4)
+void Left(int sp3, int sp4, int sp2, int sp1)
 {
   analogWrite(ENA_F, sp1);
   analogWrite(ENB_F, sp2);
