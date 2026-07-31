@@ -74,3 +74,75 @@ void NoLight()
   digitalWrite(LED_R1, HIGH);
   digitalWrite(LED_R2, HIGH);
 }
+
+int isGreen()
+{
+  Stop();
+  int ldr1 = analogRead(LDR1);
+  int ldr2 = analogRead(LDR2);
+
+  GreenL();
+  delay(200);
+
+  if(ldr1 < 120 && ldr2 < 120)
+  {
+    return 1;
+  }
+  else if(ldr1 < 120 && ldr2 >= 120)
+  {
+    return 2;
+  }
+  else if(ldr1 >= 120 && ldr2 < 120)
+  {
+    return 3;
+  }
+  return 4;
+}
+
+int isRed()
+{
+  Stop();
+  int ldr1 = analogRead(LDR1);
+  int ldr2 = analogRead(LDR2);
+
+  RedL();
+  delay(200);
+
+  if(ldr1 < 120 && ldr2 < 120)
+  {
+    return 1;
+  }
+  else if(ldr1 < 120 && ldr2 >= 120)
+  {
+    return 2;
+  }
+  else if(ldr1 >= 120 && ldr2 < 120)
+  {
+    return 3;
+  }
+  return 4;
+}
+
+int isBlue()
+{
+  Stop();
+  int ldr1 = analogRead(LDR1);
+  int ldr2 = analogRead(LDR2);
+
+  BlueL();
+  delay(200);
+
+  if(ldr1 < 120 && ldr2 < 120)
+  {
+    return 1;
+  }
+  else if(ldr1 < 120 && ldr2 >= 120)
+  {
+    return 2;
+  }
+  else if(ldr1 >= 120 && ldr2 < 120)
+  {
+    return 3;
+  }
+  return 4;
+}
