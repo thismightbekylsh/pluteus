@@ -8,5 +8,7 @@ void GreenL();
 void RedL();
 void BlueL();
 void NoLight();
+int SeeGreen();
+void GreenTest();
 
 #endif

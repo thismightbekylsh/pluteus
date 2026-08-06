@@ -62,7 +62,7 @@ int Tspeed = 1;
 
 void loop() {
 
-  SensorsCheck();
+  /* SensorsCheck();
   NoLight();
 
   int SeIR1 = analogRead(SIR1);
@@ -97,12 +97,12 @@ void loop() {
   }
   else if(SeIR2 >= THRESHOLD)
   {
-    Left(110,70,110,70);
+    Left(100,70,100,70);
     Tspeed++;
   }
   else if (SeIR3 >= THRESHOLD)
   {
-    Right(70,110,70,110);
+    Right(70,100,70,100);
     Tspeed++;
   }
   else if (SeIR4 >= THRESHOLD)
@@ -112,11 +112,12 @@ void loop() {
   }
   else if (SeIR1 >= THRESHOLD)
   {
-    Left(120,70,120,70);
+    Left(100,70,100,70);
     Tspeed++;
   }
   else {
     Go(70,70,70,70); //talvez aumentar a velocidade para que ele não fique parando
     Tspeed++;
-  }
+  } */
+  GreenTest();
 }
