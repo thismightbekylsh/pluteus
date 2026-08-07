@@ -74,3 +74,43 @@ void NoLight()
   digitalWrite(LED_R1, HIGH);
   digitalWrite(LED_R2, HIGH);
 }
+
+float WhiteValue(int sensor)
+{
+  GreenL();
+  float white = 0;
+
+  for(int i = 0; i < 3; i++)
+  {
+    white += analogRead(sensor);
+  }
+
+  white /= 3;
+
+  NoLight();
+  return white;
+}
+
+int GreenTest(float THRESHOLD1, float THRESHOLD2)
+{
+  float green1 = 0;
+  float green2 = 0;
+
+  for(int i = 0; i < 3; i++)
+  {
+    GreenL();
+    delay(200);
+    green1 += analogRead(LDR1);
+    green2 += analogRead(LDR2);
+    delay(200);
+    NoLight();
+    delay(200);
+  }
+
+  NoLight();
+
+  if(green1 >= THRESHOLD1 && green2 < THRESHOLD2) return 1;
+  else if(green1 < THRESHOLD1 && green2 >= THRESHOLD2) return 2;
+  else if(green1 >= THRESHOLD1 && green2 >= THRESHOLD2) return 3;
+  else return 4;
+}

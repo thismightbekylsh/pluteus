@@ -31,6 +31,9 @@
 #define LED_G1 36
 #define LED_R2 39
 
+float THRESHOLD_W_LDR1;
+float THRESHOLD_W_LDR2;
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(ENA_F, OUTPUT);
@@ -55,14 +58,41 @@ void setup() {
   pinMode(LED_R1, OUTPUT);
   pinMode(LED_R2, OUTPUT);
 
+  THRESHOLD_W_LDR1 = WhiteValue(LDR1);
+  THRESHOLD_W_LDR2 = WhiteValue(LDR2);
+  THRESHOLD_W_LDR1 += 100;
+  THRESHOLD_W_LDR2 += 60;
+
   Serial.begin(9600);
 }
 
-int Tspeed = 1;
-
 void loop() {
 
-  SensorsCheck();
+  switch(GreenTest(THRESHOLD_W_LDR1, THRESHOLD_W_LDR2))
+  {
+    case 1: // Esquerda
+      RedL();
+      delay(10000);
+      break;
+    case 2: // Direita
+      BlueL();
+      delay(10000);
+      break;
+    case 3: // Ambos
+      BlueL();
+      delay(500);
+      RedL();
+      delay(10000);
+      break;
+    case 4: // Nenhum
+      RedL();
+      delay(500);
+      BlueL();
+      delay(10000);
+      break;
+  }
+
+  /*SensorsCheck();
   NoLight();
 
   int SeIR1 = analogRead(SIR1);
@@ -90,33 +120,24 @@ void loop() {
     Go(50,50,50,50);
     delay(600);
   }
-  else if (Tspeed % 10 == 0)
-  {
-    Stop();
-    Tspeed = 1;
-  }
-  else if(SeIR2 >= THRESHOLD)
+
+  if(SeIR2 >= THRESHOLD)
   {
     Left(110,70,110,70);
-    Tspeed++;
   }
   else if (SeIR3 >= THRESHOLD)
   {
     Right(70,110,70,110);
-    Tspeed++;
   }
   else if (SeIR4 >= THRESHOLD)
   {
     Right(70,110,70,110);
-    Tspeed++;
   }
   else if (SeIR1 >= THRESHOLD)
   {
     Left(120,70,120,70);
-    Tspeed++;
   }
   else {
-    Go(70,70,70,70); //talvez aumentar a velocidade para que ele não fique parando
-    Tspeed++;
-  }
+    Go(70,70,70,70);
+  }*/
 }
