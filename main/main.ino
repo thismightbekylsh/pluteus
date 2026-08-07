@@ -68,7 +68,9 @@ void setup() {
 
 void loop() {
 
-  switch(GreenTest(THRESHOLD_W_LDR1, THRESHOLD_W_LDR2))
+  Turn180();
+
+  /*switch(GreenTest(THRESHOLD_W_LDR1, THRESHOLD_W_LDR2))
   {
     case 1: // Esquerda
       RedL();
@@ -90,7 +92,7 @@ void loop() {
       BlueL();
       delay(10000);
       break;
-  }
+  }*/
 
   /*SensorsCheck();
   NoLight();
