@@ -1,4 +1,4 @@
-#include "Sensorplate.h"
+/*#include "Sensorplate.h"
 #include "Motor.h"
 #include <Arduino.h>
 
@@ -60,4 +60,4 @@ void SeguirLinha()
     Go(70,70,70,70); //talvez aumentar a velocidade para que ele não fique parando
     Tspeed++;
   }
-}
+} */
