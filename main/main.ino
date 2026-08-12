@@ -1,5 +1,6 @@
 #include "Motor.h"
 #include "Sensorplate.h"
+#include "Algoritmos.h"
 
 #define ENA_F 2
 #define ENB_F 3
