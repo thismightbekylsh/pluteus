@@ -11,10 +11,42 @@
 #define LDR1 A4
 #define LDR2 A5
 
-void Turn90(char dir, int d, int THRESHOLD)
+const int THRESHOLD = 450;
+
+bool LineTest()
 {
-  Back(90,90,90,90);
+  Go(100,100,100,100);
+  delay(500);
+  Stop();
+
+  if(analogRead(SIR1) >= THRESHOLD || analogRead(SIR2) >= THRESHOLD || analogRead(SIR3) >= THRESHOLD || analogRead(SIR4) >= THRESHOLD)
+  {
+    Back(90,90,90,90);
+    delay(400);
+    Stop();
+    return true;
+  }
+
+  else
+  {
+    Back(90,90,90,90);
+    delay(400);
+    Stop();
+  }
+
+  return false;
+}
+
+void Turn90(char dir, int d)
+{
+  Stop();
+  delay(500);
+
+  Go(90,90,90,90);
   delay(d);
+
+  Stop();
+  delay(200);
 
   int SeIR2;
   int SeIR3;
@@ -31,17 +63,18 @@ void Turn90(char dir, int d, int THRESHOLD)
   }
 }
 
-void Turn180(int THRESHOLD)
+void Turn180()
 {
   Right(100,100,100,100);
   delay(1000);
 
   int SeIR3;
 
-  
   while(true)
   {
-    if(analogRead(SIR3) > THRESHOLD) break;
+    SeIR3 = analogRead(SIR3);
+
+    if(SeIR3 > THRESHOLD) break;
   }
 }
 
@@ -53,9 +86,6 @@ void SeguirLinha()
   int SeIR2 = analogRead(SIR2);
   int SeIR3 = analogRead(SIR3);
   int SeIR4 = analogRead(SIR4);
-
-  const int THRESHOLD = 450;
-
   if(SeIR2 >= THRESHOLD)
   {
     Left(110,70,110,70);

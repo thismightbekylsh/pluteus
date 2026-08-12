@@ -72,78 +72,16 @@ const int THRESHOLD = 450;
 
 void loop() {
 
-  Turn180(THRESHOLD);
-
-  delay(10000);
-
-  /*switch(GreenTest(THRESHOLD_W_LDR1, THRESHOLD_W_LDR2))
+  if(analogRead(SIR1) >= THRESHOLD && analogRead(SIR2) >= THRESHOLD)
   {
-    case 1: // Esquerda
-      RedL();
-      delay(10000);
-      break;
-    case 2: // Direita
-      BlueL();
-      delay(10000);
-      break;
-    case 3: // Ambos
-      BlueL();
-      delay(500);
-      RedL();
-      delay(10000);
-      break;
-    case 4: // Nenhum
-      RedL();
-      delay(500);
-      BlueL();
-      delay(10000);
-      break;
-  }*/
-
-  /*SensorsCheck();
-  NoLight();
-
-  int SeIR1 = analogRead(SIR1);
-  int SeIR2 = analogRead(SIR2);
-  int SeIR3 = analogRead(SIR3);
-  int SeIR4 = analogRead(SIR4);
-
-  if(SeIR1 >= THRESHOLD && SeIR2 >= THRESHOLD && SeIR3 != THRESHOLD && SeIR4 != THRESHOLD)
-  {
-    Stop();
-    delay(500);
-    Left(110,100,110,100);
-    delay(600);
-    Go(50,50,50,50);
-    delay(600);
+    if(!LineTest()) Turn90('l', 400);
   }
-  else if(SeIR4 >= THRESHOLD && SeIR3 >= THRESHOLD && SeIR1 != THRESHOLD && SeIR2 != THRESHOLD)
+  else if(analogRead(SIR3) >= THRESHOLD && analogRead(SIR4) >= THRESHOLD)
   {
-    Stop();
-    delay(500);
-    Right(100,110,100,110);
-    delay(600);
-    Go(50,50,50,50);
-    delay(600);
+    if(!LineTest()) Turn90('r', 400);
   }
-
-  if(SeIR2 >= THRESHOLD)
+  else
   {
-    Left(110,70,110,70);
+    SeguirLinha();
   }
-  else if (SeIR3 >= THRESHOLD)
-  {
-    Right(70,110,70,110);
-  }
-  else if (SeIR4 >= THRESHOLD)
-  {
-    Right(70,110,70,110);
-  }
-  else if (SeIR1 >= THRESHOLD)
-  {
-    Left(120,70,120,70);
-  }
-  else {
-    Go(70,70,70,70);
-  }*/
 }

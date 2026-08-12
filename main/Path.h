@@ -2,7 +2,8 @@
 #define PATH_H
 
 void SeguirLinha();
-void Turn90(char dir, int d, int THRESHOLD);
-void Turn180(int THRESHOLD);
+void Turn90(char dir, int d);
+void Turn180();
+bool LineTest();
 
 #endif
