@@ -143,4 +143,16 @@ void loop() {
   else {
     Go(70,70,70,70);
   }*/
+  int SeIR1 = analogRead(SIR1);
+  int SeIR2 = analogRead(SIR2);
+  int SeIR3 = analogRead(SIR3);
+  int SeIR4 = analogRead(SIR4);
+
+  if(SeIR1 >= THRESHOLD && SeIR2 >= THRESHOLD && SeIR3 >= THRESHOLD && SeIR4 >= THRESHOLD){
+    int green = GreenTest(400, 260)
+    if (green == 1) Left(100, 100, 100, 100);
+    else if (green == 2) Right(100, 100, 100, 100);
+    else if (green == 3) Turn180();
+    else if (green == 4)
+  }
 }
