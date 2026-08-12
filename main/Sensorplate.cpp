@@ -75,74 +75,42 @@ void NoLight()
   digitalWrite(LED_R2, HIGH);
 }
 
-int isGreen()
+float WhiteValue(int sensor)
 {
-  Stop();
-  int ldr1 = analogRead(LDR1);
-  int ldr2 = analogRead(LDR2);
-
   GreenL();
-  delay(200);
+  float white = 0;
 
-  if(ldr1 < 120 && ldr2 < 120)
+  for(int i = 0; i < 3; i++)
   {
-    return 1;
+    white += analogRead(sensor);
   }
-  else if(ldr1 < 120 && ldr2 >= 120)
-  {
-    return 2;
-  }
-  else if(ldr1 >= 120 && ldr2 < 120)
-  {
-    return 3;
-  }
-  return 4;
+
+  white /= 3;
+
+  NoLight();
+  return white;
 }
 
-int isRed()
+int GreenTest(float THRESHOLD1, float THRESHOLD2)
 {
-  Stop();
-  int ldr1 = analogRead(LDR1);
-  int ldr2 = analogRead(LDR2);
+  float green1 = 0;
+  float green2 = 0;
 
-  RedL();
-  delay(200);
+  for(int i = 0; i < 3; i++)
+  {
+    GreenL();
+    delay(200);
+    green1 += analogRead(LDR1);
+    green2 += analogRead(LDR2);
+    delay(200);
+    NoLight();
+    delay(200);
+  }
 
-  if(ldr1 < 120 && ldr2 < 120)
-  {
-    return 1;
-  }
-  else if(ldr1 < 120 && ldr2 >= 120)
-  {
-    return 2;
-  }
-  else if(ldr1 >= 120 && ldr2 < 120)
-  {
-    return 3;
-  }
-  return 4;
-}
+  NoLight();
 
-int isBlue()
-{
-  Stop();
-  int ldr1 = analogRead(LDR1);
-  int ldr2 = analogRead(LDR2);
-
-  BlueL();
-  delay(200);
-
-  if(ldr1 < 120 && ldr2 < 120)
-  {
-    return 1;
-  }
-  else if(ldr1 < 120 && ldr2 >= 120)
-  {
-    return 2;
-  }
-  else if(ldr1 >= 120 && ldr2 < 120)
-  {
-    return 3;
-  }
-  return 4;
+  if(green1 >= THRESHOLD1 && green2 < THRESHOLD2) return 1;
+  else if(green1 < THRESHOLD1 && green2 >= THRESHOLD2) return 2;
+  else if(green1 >= THRESHOLD1 && green2 >= THRESHOLD2) return 3;
+  else return 4;
 }
