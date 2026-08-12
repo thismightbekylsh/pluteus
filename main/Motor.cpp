@@ -105,15 +105,3 @@ void Stop()
   digitalWrite(IN3_B, LOW);
   digitalWrite(IN4_B, LOW);
 }
-
-void Turn90()
-{
-  Left(100,100,100,100);
-  delay(1000);
-}
-
-void Turn180()
-{
-  Left(100,100,100,100);
-  delay(1700);
-}
