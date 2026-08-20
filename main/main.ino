@@ -26,11 +26,13 @@
 #define LDR1 A4
 #define LDR2 A5
 
+#define LED_B1 36
+#define LED_B2 37
+
+#define LED_G1 38
+#define LED_G2 35
+
 #define LED_R1 34
-#define LED_G2 37
-#define LED_B1 35
-#define LED_B2 38
-#define LED_G1 36
 #define LED_R2 39
 
 float THRESHOLD_W_LDR1;
@@ -71,17 +73,5 @@ void setup() {
 const int THRESHOLD = 450;
 
 void loop() {
-
-  if(analogRead(SIR1) >= THRESHOLD && analogRead(SIR2) >= THRESHOLD)
-  {
-    if(!LineTest()) Turn90('l', 400);
-  }
-  else if(analogRead(SIR3) >= THRESHOLD && analogRead(SIR4) >= THRESHOLD)
-  {
-    if(!LineTest()) Turn90('r', 400);
-  }
-  else
-  {
-    SeguirLinha();
-  }
+ SeguirLinha();
 }

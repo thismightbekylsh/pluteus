@@ -3,11 +3,13 @@
 #define LDR1 A4
 #define LDR2 A5
 
-#define LED_R1 34
-#define LED_G2 37
-#define LED_B1 35
-#define LED_B2 38
-#define LED_G1 36
+#define LED_B1 36
+#define LED_B2 37
+
+#define LED_G1 38
+#define LED_G2 34
+
+#define LED_R1 35
 #define LED_R2 39
 
 void GreenL()

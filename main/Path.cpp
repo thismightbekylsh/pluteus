@@ -86,23 +86,32 @@ void SeguirLinha()
   int SeIR2 = analogRead(SIR2);
   int SeIR3 = analogRead(SIR3);
   int SeIR4 = analogRead(SIR4);
-  if(SeIR2 >= THRESHOLD)
+
+  /*if(SeIR1 >= THRESHOLD && SeIR2 >= THRESHOLD)
   {
-    Left(110,70,110,70);
+    Turn90('l', 300);
+  }
+  else if(SeIR3 >= THRESHOLD && SeIR4 >= THRESHOLD)
+  {
+    Turn90('r', 300);
+  }
+  else*/if(SeIR2 >= THRESHOLD)
+  {
+    Left(105,150,105,135);
   }
   else if (SeIR3 >= THRESHOLD)
   {
-    Right(70,110,70,110);
-  }
+   Right(135,120,135,105);
+   }
   else if (SeIR4 >= THRESHOLD)
   {
-    Right(70,110,70,110);
+   Right(135,120,135,105); 
   }
   else if (SeIR1 >= THRESHOLD)
   {
-    Left(120,70,120,70);
+    Left(105,150,105,135);
   }
   else {
-    Go(70,70,70,70);
+    Go(90,120,90,90);
   }
 }
